@@ -1,0 +1,16 @@
+{
+  "name": "device-management",
+  "version": "0.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jared Wasinger",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~4.13.4",
+    "path": "~0.12.7",
+    "nunjucks": "~2.4.1"
+  }
+}

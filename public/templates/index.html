@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <script src="/public/js/libs/angular.min.js"></script>
+    <script src="/public/js/libs/angular-material.min.js"></script>
+    <script src="/public/js/libs/angular-aria.min.js"></script>
+    <script src="/public/js/libs/angular-animate.min.js"></script>
+    <link rel="stylesheet" href="/public/css/libs/angular-material.min.css"/>
+  </head>
+  <body>
+    <div ng-app="app" layout="column" flex style="height: 100%;">
+      <section layout="row" layout-fill>
+        <md-sidenav md-component-id="left" flex="noshrink" 
+          md-is-locked-open="$mdMedia('gt-md')" 
+          class="md-sidenav-left" 
+          md-whiteframe="4" 
+          md-disable-backdrop 
+          ng-include="'/public/templates/navbar.tpl.html'"
+          >
+        </md-sidenav>
+        <div ng-controller="ContentCtrl" ng-include="'/public/templates/content.tpl.html'" flex="nogrow">
+        </div>
+      </section>
+      <div ng-include="'/public/templates/footer.tpl.html'">
+      </div>
+
+      <script src="/public/js/ContentCtrl.js"></script>
+      <script src="/public/js/app.js"></script>
+    </div>
+  </body>
+</html>
