@@ -5,26 +5,55 @@
     <script src="/public/js/libs/angular-material.min.js"></script>
     <script src="/public/js/libs/angular-aria.min.js"></script>
     <script src="/public/js/libs/angular-animate.min.js"></script>
+    <link rel="stylesheet" href="/public/css/index.css"/>
     <link rel="stylesheet" href="/public/css/libs/angular-material.min.css"/>
   </head>
   <body>
-    <div ng-app="app" layout="column" flex style="height: 100%;">
-      <section layout="row" layout-fill>
-        <md-sidenav md-component-id="left" flex="noshrink" 
-          md-is-locked-open="$mdMedia('gt-md')" 
-          class="md-sidenav-left" 
-          md-whiteframe="4" 
-          md-disable-backdrop 
-          ng-include="'/public/templates/navbar.tpl.html'"
-          >
-        </md-sidenav>
-        <div ng-controller="ContentCtrl" ng-include="'/public/templates/content.tpl.html'" flex="nogrow">
-        </div>
-      </section>
-      <div ng-include="'/public/templates/footer.tpl.html'">
-      </div>
+    <div class="container" ng-app="app" layout="column" flex>
+      <md-content flex layout-padding>
+        <section layout="row" layout-fill>
+          <!--
+          <md-sidenav md-component-id="left" flex="noshrink" 
+            md-is-locked-open="$mdMedia('gt-md')" 
+            class="md-sidenav-left" 
+            md-whiteframe="4" 
+            md-disable-backdrop 
+            ng-include="'/public/templates/navbar.tpl.html'"
+            >
+          </md-sidenav>
+          -->
+          <!--
+          <div ng-controller="ContentCtrl" ng-include="'/public/templates/content.tpl.html'" flex="nogrow">
+          </div>
+          -->
+          <form ng-submit="$event.preventDefault()" ng-controller="SearchCtrl">
+            <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+              md-transform-chip="ctrl.transformChip($chip)"
+              md-require-match="ctrl.autocompleteDemoRequireMatch">
+              <md-autocomplete
+                  md-selected-item="ctrl.selectedItem"
+                  md-search-text="ctrl.searchText"
+                  md-items="item in ctrl.querySearch(ctrl.searchText)"
+                  md-item-text="item.name"
+                  placeholder="Documentation Source(s)">
+                <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+              </md-autocomplete>
+              <md-chip-template>
+                <span>
+                  <strong>{{$chip.name}}</strong>
+                  <em>({{$chip.type}})</em>
+                </span>
+              </md-chip-template>
+            </md-chips>
+            <md-button class="md-raised md-primary">Search</md-button>
+          </form>
+
+        </section>
+        <!--<div ng-include="'/public/templates/footer.tpl.html'"> </div> -->
+      </md-content>
 
       <script src="/public/js/ContentCtrl.js"></script>
+      <script src="/public/js/SearchCtrl.js"></script>
       <script src="/public/js/app.js"></script>
     </div>
   </body>
