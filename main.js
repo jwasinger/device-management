@@ -15,6 +15,6 @@ nunjucks.configure(path.join(__dirname, './public/templates'), {
   express: express_app
 });
 
-express_app.listen(9999, function() {
+express_app.listen(3000, function() {
   console.log('server started');
 });
