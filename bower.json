@@ -20,7 +20,8 @@
     "angular": "^1.5.3",
     "angular-material": "^1.0.6",
     "angular-aria": "^1.5.3",
-    "angular-animate": "^1.5.3"
+    "angular-animate": "^1.5.3",
+    "angular-material-data-table": "~0.10.9"
   },
   "bowerMove": {
     "angular": {
@@ -35,6 +36,10 @@
     },
     "angular-animate": {
       "*.min.js": "public/js/libs/"
+    },
+    "angular-material-data-table": {
+      "dist/*.js": "public/js/libs",
+      "dist/*.css": "public/css/libs"
     }
   }
 }

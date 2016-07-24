@@ -9,8 +9,9 @@
   "author": "Jared Wasinger",
   "license": "BSD-2-Clause",
   "dependencies": {
+    "bower-move": "^1.0.1",
     "express": "~4.13.4",
-    "path": "~0.12.7",
-    "nunjucks": "~2.4.1"
+    "nunjucks": "~2.4.1",
+    "path": "~0.12.7"
   }
 }

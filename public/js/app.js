@@ -1,5 +1,1 @@
-angular.module('app', ['ngMaterial', 'ngAria', 'ngAnimate', 'content']);
-
-angular.module('app').controller(['$scope', function($scope) {
-
-}]);
+angular.module('app', ['md.data.table', 'ngMaterial', 'ngAria', 'ngAnimate',  'd3', 'app.controllers.graphCtrl', 'app.directives', 'app.directives.barchart', 'app.directives.pretty-table', 'app.hostsReportCtrl']);
