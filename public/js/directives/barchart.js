@@ -53,7 +53,7 @@ angular.module('app.directives.barchart', ['d3'])
 
 
 				scope.animationTimeMS = 500;
-				scope.BarSpacing = 0.5;
+				scope.BarSpacing = 0.1;
 
 				scope.objGenKV = function(obj) {
 					var result = new Array();

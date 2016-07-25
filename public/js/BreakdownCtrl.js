@@ -4,15 +4,13 @@ angular.module('app.hostsReportCtrl', ['hosts'])
 
   $scope.query = {
     order: 'hostname',
-    limit: 10,
+    limit: 5,
     page: 1
   };
+
 	$scope.getGarbageData = function() {
 		$scope.promise = hostsService.GetGarbageData($scope.query).then(function(data) {
 			$scope.data = data;
 		});
 	}
-
-	$scope.getGarbageData()
-
 }]);

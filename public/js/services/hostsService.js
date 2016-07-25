@@ -1,7 +1,61 @@
 angular.module('hosts', [])
   .factory('hostsService', ['$http', '$document', '$q', '$rootScope',
     function($http, $document, $q, $rootScope) {
-			function genGarbageData() {
+			var hostnames = [
+				"cbe102",
+				"cbe103",
+				"starDB419",
+				"website_prod",
+				"datacrunch1",
+				"datacrunch2",
+				"datacrunch3",
+				"datacrunch4",
+			];
+
+			var ips = [
+				"192.168.0.1",
+				"255.102.230.1",
+				"10.10.0.1",
+				"241.111.1.0"
+			];
+
+			var services = [
+				"UserDB",
+				"WebServer",
+				"DNS",
+				"DataCrunch"
+			];
+
+			var statuses = [
+				"Up",
+				"Down",
+				"Paused"
+			];
+			
+			function retrieveRandElement(array) {
+				return array[Math.floor(Math.random() * array.length)];
+			}
+
+			function genRandData() {
+				return {
+					hostname: retrieveRandElement(hostnames),
+					ip: 			retrieveRandElement(ips),
+					service: 	retrieveRandElement(services),
+					status: 	retrieveRandElement(statuses),
+					timestamp:'',
+				}
+			}
+
+			function genGarbageData(query, amt) {
+				var result = []
+				for (var i = 0; i < amt; i++) {
+					result.push(genRandData());
+				}
+
+				var beginning = (query.page - 1) * query.limit;
+				var end = beginning + query.limit;
+				return result.slice(beginning, end);
+				/*
 				return [
 					{hostname:"foo", ip:"192.168.111.181", service:"Health Check", status:"Up", timestamp:"now"},
 					{hostname:"foo", ip:"192.168.111.181", service:"Health Check", status:"Up", timestamp:"now"},
@@ -9,11 +63,12 @@ angular.module('hosts', [])
 					{hostname:"foo", ip:"192.168.111.181", service:"Health Check", status:"Up", timestamp:"now"},
 					{hostname:"foo", ip:"192.168.111.181", service:"Health Check", status:"Up", timestamp:"now"},
 					{hostname:"foo", ip:"192.168.111.181", service:"Health Check", status:"Up", timestamp:"now"}];
+				*/
 			}
 
 			return {
-				GetGarbageData: function() {
-					return $q.when(genGarbageData());
+				GetGarbageData: function(query) {
+					return $q.when(genGarbageData(query, 100));
 				},
 				GetData: function() {
 					return
