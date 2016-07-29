@@ -5,7 +5,7 @@ angular.module('app.directives.barchart', ['d3'])
     //require: ['d3Service'],
     template: "<svg style='width: 100%;' class='graph'></svg>",
     transclude: true,
-    scope: {},
+    scope: true,
     link: function(scope, element, attrs) {
 			scope.element = angular.element(element).find("svg") 
 
@@ -21,8 +21,6 @@ angular.module('app.directives.barchart', ['d3'])
           {name: 'Q', score: 75},
           {name: "Loser", score: 48}
         ];
-
-
 				
 				scope.ViewData = [];
 
@@ -32,7 +30,6 @@ angular.module('app.directives.barchart', ['d3'])
 					Bottom: 40,
 					Top: 40
 				}
-
 
 				var clientRect = scope.element[0].getBoundingClientRect();
 				scope.ViewportDimensions = {
@@ -51,8 +48,7 @@ angular.module('app.directives.barchart', ['d3'])
 					Info: 'green'
 				};
 
-
-				scope.animationTimeMS = 500;
+				scope.animationTimeMS = 300;
 				scope.BarSpacing = 0.1;
 
 				scope.objGenKV = function(obj) {
@@ -178,7 +174,7 @@ angular.module('app.directives.barchart', ['d3'])
 						}
 					}
 
-					return val;
+					return max;
 				}
 
 				//reformat y axis to match the new range of values in ViewData
@@ -197,7 +193,19 @@ angular.module('app.directives.barchart', ['d3'])
 						.scale(yScale)
 						.orient('left')
 
+					d3.selectAll(scope.element).selectAll('.y-axis').call(scope.yAxis);
+					d3.selectAll('.y-axis').attr('opacity', '0');
+					d3.selectAll('.y-axis path').attr('fill', 'none');
 
+					d3.selectAll('.y-axis').transition()
+						.duration(scope.animationTimeMS)
+						.ease('quad')
+							.attr('opacity', '1')
+							.each('end', function() {
+								deferred.resolve();
+							});
+					return deferred.promise;
+					/*
 					d3.selectAll('g.y-axis').transition()
 						.duration(scope.animationTimeMS)
 						.call(yAxis)
@@ -210,6 +218,7 @@ angular.module('app.directives.barchart', ['d3'])
 						.attr('stroke-width', '2px');
 
 					return deferred.promise;
+					*/
 				}
 
 

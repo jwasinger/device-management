@@ -21,12 +21,16 @@
     "angular-material": "^1.0.6",
     "angular-aria": "^1.5.3",
     "angular-animate": "^1.5.3",
-    "angular-material-data-table": "~0.10.9"
+    "angular-material-data-table": "~0.10.9",
+    "jquery": "^3.1.0"
   },
   "bowerMove": {
     "angular": {
-      "*.min.js": "public/js/libs/"
+      "*.js": "public/js/libs/"
     },
+		"jquery": {
+			"dist/*.js": "public/js/libs"
+		},
     "angular-material": {
       "*.min.js": "public/js/libs/",
       "*.min.css": "public/css/libs"

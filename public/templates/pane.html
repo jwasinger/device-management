@@ -34,6 +34,6 @@
 </style>
 
 <div layout="column">
-  <div class="title"><span>{{title}}</span></div>
+  <div ng-show="{{title != undefined}}"  class="title"><span>{{title}}</span></div>
   <ng-transclude flex class="content"></ng-transclude>
 </div>

@@ -1,1 +1,1 @@
-angular.module('app', ['md.data.table', 'ngMaterial', 'ngAria', 'ngAnimate',  'd3', 'app.controllers.graphCtrl', 'app.directives', 'app.directives.barchart', 'app.directives.pretty-table', 'app.hostsReportCtrl']);
+angular.module('app', ['md.data.table', 'ngMaterial', 'ngAria', 'ngAnimate',  'd3', 'app.controllers.graphCtrl', 'app.directives', 'app.directives.barchart', 'app.directives.pretty-table', 'app.hostsReportCtrl', 'app.directives.piechart', 'app.breakdownCtrl']);

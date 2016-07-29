@@ -1,5 +1,5 @@
-angular.module('app.hostsReportCtrl', ['hosts'])
-.controller('HostsReportCtrl', ['$scope', 'hostsService', function($scope, hostsService) {
+angular.module('app.breakdownCtrl', ['hosts', 'breakdown'])
+.controller('BreakdownCtrl', ['$scope', 'breakdownService', function($scope, breakdownService) {
   $scope.selected = [];
 
   $scope.query = {
@@ -7,10 +7,11 @@ angular.module('app.hostsReportCtrl', ['hosts'])
     limit: 5,
     page: 1
   };
-
 	$scope.getGarbageData = function() {
-		$scope.promise = hostsService.GetGarbageData($scope.query).then(function(data) {
-			$scope.data = data;
-		});
+		$scope.promise = breakdownService.GetGarbageData($scope.query).then(function(data) {
+			$scope.data = data
+		})
 	}
+
+	$scope.getGarbageData($scope.query);
 }]);

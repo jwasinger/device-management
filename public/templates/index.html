@@ -3,6 +3,7 @@
   <head>
     <script src="/public/js/libs/angular.js"></script>
     <script src="/public/js/libs/angular-material.min.js"></script>
+    <script src="/public/js/libs/jquery.min.js"></script>
     <script src="/public/js/libs/angular-aria.min.js"></script>
     <script src="/public/js/libs/angular-animate.min.js"></script>
     <link rel="stylesheet" href="/public/css/libs/angular-material.min.css"/>
@@ -12,18 +13,21 @@
     <script src="/public/js/app.js"></script>
     <script src="/public/js/graph-ctrl.js"></script>
     <script src="/public/js/HostsReportCtrl.js"></script>
+    <script src="/public/js/BreakdownCtrl.js"></script>
     <script src="/public/js/directives/table.js"></script>
     <script src="/public/js/directives/barchart.js"></script>
+    <script src="/public/js/directives/piechart.js"></script>
     <script src="/public/js/directives/pane.js"></script>
     <script src="/public/js/services/d3Service.js"></script>
     <script src="/public/js/services/hostsService.js"></script>
+    <script src="/public/js/services/breakdownService.js"></script>
 
 		<script type="text/javascript" src="public/js/libs/md-data-table.min.js"></script>
   </head>
   <body>
 
     <div class="app" ng-app="app" layout="column" flex>
-      <section layout="row" layout-fill>
+      <section layout="row" layout-sm="column" layout-xs="column" layout-fill>
         <!--
         <md-sidenav md-component-id="left" flex="noshrink" 
           md-is-locked-open="$mdMedia('gt-md')" 
@@ -36,18 +40,20 @@
         <div ng-controller="ContentCtrl" ng-include="'/public/templates/content.tpl.html'" flex="nogrow">
         </div>
         -->
-        <section flex="40" layout="column" layout-fill layout-align="stretch">
+        <section layout="column" layout-fill layout-align="stretch">
           <pane title='Breakdown by App' flex="1">
-            <piechart></piechart>
+						<div ng-controller="BreakdownCtrl	as ctrl">
+							<piechart data="ctrl.data"></piechart>
+						</div>
           </pane>
-          <pane title="This Week at a Glance" flex > 
+          <pane title="Breakdown over Time" flex > 
 						<barchart layout="row"></barchart>
           </pane>
         </section>
 
-        <section flex="60" layout="column" layout-fill>
+        <section layout="column" layout-fill>
 					<pane class="report" flex="1">
-						<pretty-table ng-controller="HostsReportCtrl"></pretty-table>
+						<pretty-table class="compact" ng-controller="HostsReportCtrl"></pretty-table>
 					</pane>
 					<!--
           <pane title="Team A Ticket Velocity" flex="50"> Content </pane>
