@@ -3,7 +3,7 @@
 
 ## Installation 
 
-1. Clone the repo `git clone https://github.com/jwasinger/material-dashboard`
+1. Clone the repo `git clone https://github.com/jwasinger/material-dashboard`, `cd material-dashboard`
 2. Install NPM dependencies `npm install`
 3. Install Bower dependencies `bower install`
 4. Install bower-move `npm install -g bower-move` and run `bower-move`
