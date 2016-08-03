@@ -2,11 +2,10 @@
   pane {
     margin: 5px;
 		padding: 5px;
+    position: relative;
   }
 
   pane>div {
-    width: 100%;
-    height: 100%;
     background-color: #fff;
     border-radius: 2px;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
@@ -33,7 +32,7 @@
 	}
 </style>
 
-<div layout="column">
-  <div ng-show="{{title != undefined}}"  class="title"><span>{{title}}</span></div>
+<div layout-fill layout="column" style="position: absolute;">
+  <div ng-show="{{title != undefined}}"  class="title" style=""><span>{{title}}</span></div>
   <ng-transclude flex class="content"></ng-transclude>
 </div>
