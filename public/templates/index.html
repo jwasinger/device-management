@@ -22,10 +22,9 @@
     <script src="/public/js/services/hostsService.js"></script>
     <script src="/public/js/services/breakdownService.js"></script>
 
-		<script type="text/javascript" src="public/js/libs/md-data-table.min.js"></script>
+    <script type="text/javascript" src="public/js/libs/md-data-table.min.js"></script>
   </head>
   <body>
-
     <div class="app" ng-app="app" layout="column" flex>
       <section layout="row" layout-sm="column" layout-xs="column" layout-fill>
         <!--
@@ -42,23 +41,23 @@
         -->
         <section layout="column" layout-fill layout-align="stretch">
           <pane title='Breakdown by App' flex="1">
-						<div ng-controller="BreakdownCtrl	as ctrl">
-							<piechart layout-align="center end" data="ctrl.data"></piechart>
-						</div>
+            <div ng-controller="BreakdownCtrl as ctrl">
+              <piechart layout-align="center end" data="ctrl.data"></piechart>
+            </div>
           </pane>
           <pane title="Breakdown over Time" flex > 
-						<barchart layout="row"></barchart>
+            <barchart layout="row"></barchart>
           </pane>
         </section>
 
         <section layout="column" layout-fill>
-					<pane class="report" flex="1">
-						<pretty-table class="compact" ng-controller="HostsReportCtrl"></pretty-table>
-					</pane>
-					<!--
+          <pane class="report" flex="1">
+            <pretty-table class="compact" ng-controller="HostsReportCtrl"></pretty-table>
+          </pane>
+          <!--
           <pane title="Team A Ticket Velocity" flex="50"> Content </pane>
           <pane title='Team B Ticket Velocity' flex="50"> Content </pane>
-					-->
+          -->
         </section>
       </section>
 

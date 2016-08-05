@@ -3,7 +3,7 @@ angular.module('app.directives.barchart', ['d3'])
   return {
     restrict: 'E',
     //require: ['d3Service'],
-    template: "<svg style='width: 100%;' class='graph'></svg>",
+    template: "<svg class='graph'></svg>",
     transclude: true,
     scope: true,
     link: function(scope, element, attrs) {
@@ -49,7 +49,7 @@ angular.module('app.directives.barchart', ['d3'])
 				};
 
 				scope.animationTimeMS = 300;
-				scope.BarSpacing = 0.1;
+				scope.BarSpacing = 0.2;
 
 				scope.objGenKV = function(obj) {
 					var result = new Array();
@@ -110,17 +110,27 @@ angular.module('app.directives.barchart', ['d3'])
 					var result = new Array();
 					var dayNum = 0;
 
+          var days = ['7/1','7/2','7/3','7/4','7/5','7/6','7/7']
+          for(var i = 0; i < 7; i++) {
+            result.push({
+              key: days[i],
+              value: scope.objGenKV(data.Months[0].Weeks[0].Days[i].Alerts)
+            });
+          }
+          
+          /*
 					for(var i = 0; i < data.Months.length; i++) {
 						for(var j = 0; j < data.Months[i].Weeks.length; j++) {
 							for(var k = 0; k < data.Months[i].Weeks[j].Days.length; k++) {
 								result.push({
 									key: 'Day'+dayNum,
-									value: scope.objGenKV(data.Months[i].Weeks[j].Days[k].Alerts)
+									value: scope.objGenKV(data.Months[0].Weeks[0].Days[k].Alerts)
 								});
 								dayNum++;
 							}
 						}
 					}
+          */
 
 					curView = 'day';
 					scope.ViewData = result;

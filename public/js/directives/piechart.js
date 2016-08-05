@@ -13,14 +13,14 @@ angular.module('app.directives.piechart', ['d3'])
 						Height: clientRect.bottom - clientRect.top 
 					}
 
-					scope.Radius = Math.min(scope.ViewportDimensions.Width, scope.ViewportDimensions.Height) / 2;
+					scope.Radius = Math.min(scope.ViewportDimensions.Width, scope.ViewportDimensions.Height) / 3;
 
 					scope.color = d3.scale.ordinal()
 							.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
 					scope.arc = d3.svg.arc()
 							.outerRadius(scope.Radius - 10)
-							.innerRadius(scope.Radius - 40)
+							.innerRadius(scope.Radius - 28)
 							.padAngle(0.07);
 
 					scope.labelArc = d3.svg.arc()

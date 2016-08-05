@@ -2,14 +2,12 @@ angular.module('hosts', [])
   .factory('hostsService', ['$http', '$document', '$q', '$rootScope',
     function($http, $document, $q, $rootScope) {
 			var hostnames = [
-				"cbe102",
-				"cbe103",
-				"starDB419",
-				"website_prod",
-				"datacrunch1",
-				"datacrunch2",
-				"datacrunch3",
-				"datacrunch4",
+				"db-cache",
+				"dev-access-portal",
+				"prod-access-portal",
+				"db-cassandra1",
+				"db-cassandra2",
+				"db-cassandra3",
 			];
 
 			var ips = [
