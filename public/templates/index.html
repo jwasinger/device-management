@@ -40,7 +40,7 @@
         </div>
         -->
         <section layout="column" layout-fill layout-align="stretch">
-          <pane title='Breakdown by App' flex="1">
+          <pane title='Breakdown by App' flex="">
             <div ng-controller="BreakdownCtrl as ctrl">
               <piechart layout-align="center end" data="ctrl.data"></piechart>
             </div>
@@ -64,8 +64,5 @@
       <div ng-include="'/public/templates/footer.tpl.html'">
       </div>
     </div>
-
-
-
   </body>
 </html>

@@ -18,10 +18,9 @@ angular.module('hosts', [])
 			];
 
 			var services = [
-				"UserDB",
-				"WebServer",
-				"DNS",
-				"DataCrunch"
+				"accu-scan",
+				"filesystem",
+				"life-ping",
 			];
 
 			var statuses = [
