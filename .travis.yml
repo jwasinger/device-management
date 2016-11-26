@@ -13,8 +13,8 @@ deploy:
     local_dir: dpl_cd_upload
     skip_cleanup: true
     on:
-      repo: travis-ci/cat-party
-    bucket: catparty-codedeploy
+      repo: jwasinger/material-dashboard
+    bucket: material-dashboard
   - provider: codedeploy
     access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
     secret_access_key: *1
