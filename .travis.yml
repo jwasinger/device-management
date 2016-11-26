@@ -18,9 +18,8 @@ deploy:
   - provider: codedeploy
     access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
     secret_access_key: *1
-    bucket: pipeline-deploy
+    bucket: material-dashboard
     key: latest/App.zip
     application: material-dashboard
     deployment_group: material-dashboard
     repo: jwasinger/material-dashboard
-
