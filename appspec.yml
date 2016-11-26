@@ -5,13 +5,13 @@ files:
     destination: /app/
 hooks:
   BeforeInstall:
-    - location: infrastructure/scripts/install_dependencies
+    - location: infrastructure/scripts/install_dependencies.sh
       timeout: 300
       runas: root
-    - location: infrastructure/scripts/start_server
+    - location: infrastructure/scripts/start_server.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: infrastructure/scripts/stop_server
+    - location: infrastructure/scripts/stop_server.sh
       timeout: 300
       runas: root
