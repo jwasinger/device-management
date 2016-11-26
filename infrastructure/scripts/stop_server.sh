@@ -1,3 +1,3 @@
 #! /bin/bash
 echo "stopping"
-rm -rf /app/
+rm -rf /ec2-user/app/
