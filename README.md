@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/jwasinger/material-dashboard.svg?branch=master)](https://travis-ci.org/jwasinger/material-dashboard)
 # Material Dashboard
   This application is a mockup of an analytics dashboard built to showcase the features of Angular Material and D3.js.
 
