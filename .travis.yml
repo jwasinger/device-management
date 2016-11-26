@@ -2,7 +2,7 @@ language: ruby
 install: echo "party time"
 script: echo "like it's cat meow 99" && true
 before_deploy:
-- zip -r latest web_app/*
+- zip -r latest *
 - mkdir -p dpl_cd_upload
 - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
