@@ -1,21 +1,26 @@
 language: ruby
-
 install: echo "party time"
-
 script: echo "like it's cat meow 99" && true
-
 before_deploy:
-  - zip -r latest *
-  - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
-
+- zip -r latest *
+- mkdir -p dpl_cd_upload
+- mv latest.zip dpl_cd_upload/latest.zip
 deploy:
   - provider: s3
-    ⋮ # rest of S3 deployment for MyApp.zip
+    access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
+    secret_access_key: &1
+      secure: cM0dIneYJfq225CtFT1xjtxnWqaCIFXzDMLuucV98ZApNBl9iQZqTBL+SmqKSnlNKQVEhcm0CxDPLTcUFlveSqOQUSjr7P3ClGowCrwlisuLYwAS0f539zAV9lJTGTa35sb3C9WQLkP/E5hrzsTQE+CR55jC73OrWla4KWOrucIihXe9paoyatEc7cZ+N0hko7wboaoYNbkp3gBxPZfjfWjdWcAieRX30xD3xQ4ngeFJSOzRR0GHylzGOfJSaSj2VwcHLpoExrY/gPJ/wayqkT/LqZiI7AAD0ZPNuAWLbdM80W4nokwg+U5MuSWSkuz/80+4VrwrOG9rCGo5gaspTelnUcz8fJ3rMzD9cF0F6xAGUDSlKso7BoA4lYmOQ3fQFhvGikJcf9Plc/dc6vmfg1g7OZ6pGSQ5a5syvXmyEKVRxGjFHLf+NHN1JhY97yWuO70ad4SCvNEWUueFYOC5L63/Qx/hSRVDhACHGFhEp6n5H0tjhtjgIJfoUwpfxZR+GhxgBU+cEhAc0EjH3FGzKra3Ekl0jMpSmNghi6o273RB0GHWDDnF75PLz351SrSVkj9asgKlGXNKYbwS1tKZ3UDXwAnPKoUlRT1hv2TYqJY6k7IJkWsLiZjwEqDJ3tuCeKCRdLnSes7zRPo5BLSGUXmmOUAAUxcQCRrIuBSkyeM=
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on:
+      repo: travis-ci/cat-party
+    bucket: catparty-codedeploy
   - provider: codedeploy
-    access_key_id: "YOUR AWS ACCESS KEY"
-    secret_access_key: "YOUR AWS SECRET KEY"
-    bucket: "S3 Bucket"
-    key: latest/MyApp.zip
-    application: MyApp
-    deployment_group: MyDeploymentGroup
+    access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
+    secret_access_key: *1
+    bucket: pipeline-deploy
+    key: latest/App.zip
+    application: material-dashboard
+    deployment_group: material-dashboard
+    repo: jwasinger/material-dashboard
+
