@@ -17,7 +17,7 @@ deploy:
   - provider: codedeploy
     access_key_id: AKIAI7EYDS3V62F42DIQ
     bucket: material-dashboard
-    key: latest/App.zip
+    key: latest.zip
     application: MaterialDashboard
     deployment_group: MaterialDashboardDG
     region: us-west-2
