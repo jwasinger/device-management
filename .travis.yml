@@ -1,22 +1,25 @@
-deploy:
-- provider: s3
-  access_key_id: AKIAI7EYDS3V62F42DIQ
-  secret_access_key: &78554530
-    secure: bvTxF8W58ZWhDWfvtoSZJGdfZWTv9hml70LQww/Jepf1//JIkteK0f72wmIv9/W+5HNrBweSx2as7qhvkBP2EdTq8HKkh7LOxTPFkso3qp9C3UwQMgitImiu1dWRo5WdqX1uGsYx/PGqP4wSEehhJZFNtl1JALOOAke2sp4lpOamsGn8iIi2E0oLbDTNb0NOR4/NLeQM+igf51Kra3vLDmlmEb37XcC9MPX4P1z+ZuG/VPJENSoKcfAx/56A3yoA+GHYrPXhVoY/b5GFDe1Fugyt/3FBTmPmYSuwOTGgjd0yyU9qc8+mAH31JMTxl0Z218MI/3eEW/qD+zIZZRIkChjy9a8ru41854p+pcY44mvBeBmej/9540IrrPUKQckWEd2g/Cj4ZObbHcZWviw9fiN6gNYaSi189l5Mp4fCP4p8QoLFL1qWPThDm+WtukFtKQRN7he/NqXrnA92vVyQcdKSs2M5ifZKJ0u/beI2JC0Ud1g5mw5u7zI8sjM9EAU0/kvy7xV9t6VLNy1s4u0VJpeJC4uCPlB1dDrKiI1FpxVwZxz2l5ucgasS7qTgSla91ZWTAf8fVP1EIA1vzGiKFCSAx45ji27du6jLDBhfMIJ4xN/6uEGqhVXoiyIyF0HkimxqE1+XJvxJm2cg7KIaVKBQVerpUN5mxd498Wn4VtI=
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  on: &78576690
-    repo: jwasinger/material-dashboard
-  bucket: material-dashboard
-- provider: codedeploy
-  access_key_id: AKIAI7EYDS3V62F42DIQ
-  secret_access_key: *78554530
-  bucket: material-dashboard
-  key: obj.zip
-  bundle_type: zip
-  application: material-dashboard
-  deployment_group: material-dashboard
-  on: *78576690
+language: ruby
+install: echo "party time"
+script: echo "like it's cat meow 99" && true
 before_deploy:
+- zip -r latest *
 - mkdir -p dpl_cd_upload
-- mv obj.zip dpl_cd_upload/obj.zip
+- mv latest.zip dpl_cd_upload/latest.zip
+deploy:
+  - provider: s3
+    access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
+    secret_access_key: &1
+      secure: bvTxF8W58ZWhDWfvtoSZJGdfZWTv9hml70LQww/Jepf1//JIkteK0f72wmIv9/W+5HNrBweSx2as7qhvkBP2EdTq8HKkh7LOxTPFkso3qp9C3UwQMgitImiu1dWRo5WdqX1uGsYx/PGqP4wSEehhJZFNtl1JALOOAke2sp4lpOamsGn8iIi2E0oLbDTNb0NOR4/NLeQM+igf51Kra3vLDmlmEb37XcC9MPX4P1z+ZuG/VPJENSoKcfAx/56A3yoA+GHYrPXhVoY/b5GFDe1Fugyt/3FBTmPmYSuwOTGgjd0yyU9qc8+mAH31JMTxl0Z218MI/3eEW/qD+zIZZRIkChjy9a8ru41854p+pcY44mvBeBmej/9540IrrPUKQckWEd2g/Cj4ZObbHcZWviw9fiN6gNYaSi189l5Mp4fCP4p8QoLFL1qWPThDm+WtukFtKQRN7he/NqXrnA92vVyQcdKSs2M5ifZKJ0u/beI2JC0Ud1g5mw5u7zI8sjM9EAU0/kvy7xV9t6VLNy1s4u0VJpeJC4uCPlB1dDrKiI1FpxVwZxz2l5ucgasS7qTgSla91ZWTAf8fVP1EIA1vzGiKFCSAx45ji27du6jLDBhfMIJ4xN/6uEGqhVXoiyIyF0HkimxqE1+XJvxJm2cg7KIaVKBQVerpUN5mxd498Wn4VtI=
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on &2:
+      repo: jwasinger/material-dashboard
+    bucket: material-dashboard
+  - provider: codedeploy
+    access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
+    secret_access_key: *1
+    bucket: material-dashboard
+    key: latest/App.zip
+    application: material-dashboard
+    deployment_group: material-dashboard
+    on: *2
