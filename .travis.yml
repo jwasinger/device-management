@@ -6,7 +6,6 @@ before_deploy:
 - mkdir -p dpl_cd_upload
 - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
-  matrix:
   - provider: s3
     access_key_id: AKIAIR2M7LCJDA3RQ3ZQ
     local_dir: dpl_cd_upload
