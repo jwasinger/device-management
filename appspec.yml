@@ -6,7 +6,7 @@ files:
   - source: infrastructure
     destination: /app/infrastructure
   - source: infrastructure/config/epel.repo
-    destination: /etc/yum.repos.d/epel.repo
+    destination: /etc/yum.repos.d/
 hooks:
   BeforeInstall:
     - location: infrastructure/scripts/install_dependencies.sh
