@@ -18,8 +18,8 @@ deploy:
     access_key_id: AKIAI7EYDS3V62F42DIQ
     bucket: material-dashboard
     key: latest.zip
-    application: MaterialDashboard
-    deployment_group: MaterialDashboardDG
+    application: material-dashboard-application
+    deployment_group: site-dg
     region: us-west-2
     secret_access_key:
       secure: B32545qkkdxp/EwgbZF9vTuIko4HiCzkZRX4EiXziMsrw0qW3z4H8oEXp76hsU63yPiAN/sIM4z4xNx3hvF7Iwyexc10vYhWfNCJ+EjeNkgt5MQUE94qhqhrouvT0RH2A2dmmGtwSY2juOKsabKZUnVwUVa1IwERjzcWLl0e5rJpsulKfwvRtZyZjyy/31AkmqASUjgaGGiQN0PW5pRyWRVJA0v9GX8pdRqiLTVXoKace/LDYiLwdkl3r8JO+rMCvBnqqljbmiUfSm6iZ1NO7G1mMkOiw9U8iNaZq7qU9KGnvr8g43z9X6Gs6wAY4AZh0+yvzhJT9CHzr4nl4FwZw+D9zh14rUFvKeSOwTK4q5aBzmk8t10Uc3/ROTCRnjMbNOvJmbO1Q00PPcYQUz5pNyX79mtI82KLOAdQc6bKl7bnC/c4W8KwlUiGQSSs9X2yAC6x4KnXq+HfJC9p6kNNpKXoAYl5wAF8wwgYwpwhzNAvXEo23yyjnENhirtwmMBpQqBRjyZW2I8z9a4kKaadhfWA14U7mBoomlAQ3Fa5gazJe8B95efnExo2cIgSuEDeVFC8dXYcP6Lf4jZ7cAIc3HuKJxZHK3FuX2Q1Ov/gZG72z4J79HlAHWOsBlTfIxl+YsuJBJfAbO4RER7O+wI8Cg9z4SOI1DLsgqkG07t+oIk=
