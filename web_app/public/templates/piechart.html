@@ -2,10 +2,14 @@
 	div.piechart-ctnr {
 		height: 100%;
 	}
+
+  ul.breakdown-num {
+    
+  }
 </style>
 <div class="piechart-ctnr" flex layout="row">
 	<svg flex="1" class="pie"></svg>
-	<div class="key" flex="1" class="key">
+	<div class="breakdown-num" class="key" flex="1" class="key">
 		<ul style="list-style-type: none;">
 			<li ng-repeat="(key, val) in data">
 				<span style="color: {{val.color}}; font-size: 40px;">
