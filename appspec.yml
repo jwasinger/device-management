@@ -6,8 +6,8 @@ files:
   - source: infrastructure
     destination: /app/infrastructure
 hooks:
-  BeforeInstall:
-    - location: /app/infrastructure/scripts/install_dependencies.sh
+  AfterInstall:
+    - location: infrastructure/scripts/install_dependencies.sh
       timeout: 300
       runas: root
     - location: /app/infrastructure/scripts/start_server.sh
