@@ -6,17 +6,10 @@ before_deploy:
 - mkdir -p dpl_cd_upload
 - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
-  - provider: s3
-    access_key_id: AKIAI7EYDS3V62F42DIQ
-    local_dir: dpl_cd_upload
-    skip_cleanup: true
-    bucket: material-dashboard
-    secret_access_key:
-#      secure: bvTxF8W58ZWhDWfvtoSZJGdfZWTv9hml70LQww/Jepf1//JIkteK0f72wmIv9/W+5HNrBweSx2as7qhvkBP2EdTq8HKkh7LOxTPFkso3qp9C3UwQMgitImiu1dWRo5WdqX1uGsYx/PGqP4wSEehhJZFNtl1JALOOAke2sp4lpOamsGn8iIi2E0oLbDTNb0NOR4/NLeQM+igf51Kra3vLDmlmEb37XcC9MPX4P1z+ZuG/VPJENSoKcfAx/56A3yoA+GHYrPXhVoY/b5GFDe1Fugyt/3FBTmPmYSuwOTGgjd0yyU9qc8+mAH31JMTxl0Z218MI/3eEW/qD+zIZZRIkChjy9a8ru41854p+pcY44mvBeBmej/9540IrrPUKQckWEd2g/Cj4ZObbHcZWviw9fiN6gNYaSi189l5Mp4fCP4p8QoLFL1qWPThDm+WtukFtKQRN7he/NqXrnA92vVyQcdKSs2M5ifZKJ0u/beI2JC0Ud1g5mw5u7zI8sjM9EAU0/kvy7xV9t6VLNy1s4u0VJpeJC4uCPlB1dDrKiI1FpxVwZxz2l5ucgasS7qTgSla91ZWTAf8fVP1EIA1vzGiKFCSAx45ji27du6jLDBhfMIJ4xN/6uEGqhVXoiyIyF0HkimxqE1+XJvxJm2cg7KIaVKBQVerpUN5mxd498Wn4VtI=
-      secure: B32545qkkdxp/EwgbZF9vTuIko4HiCzkZRX4EiXziMsrw0qW3z4H8oEXp76hsU63yPiAN/sIM4z4xNx3hvF7Iwyexc10vYhWfNCJ+EjeNkgt5MQUE94qhqhrouvT0RH2A2dmmGtwSY2juOKsabKZUnVwUVa1IwERjzcWLl0e5rJpsulKfwvRtZyZjyy/31AkmqASUjgaGGiQN0PW5pRyWRVJA0v9GX8pdRqiLTVXoKace/LDYiLwdkl3r8JO+rMCvBnqqljbmiUfSm6iZ1NO7G1mMkOiw9U8iNaZq7qU9KGnvr8g43z9X6Gs6wAY4AZh0+yvzhJT9CHzr4nl4FwZw+D9zh14rUFvKeSOwTK4q5aBzmk8t10Uc3/ROTCRnjMbNOvJmbO1Q00PPcYQUz5pNyX79mtI82KLOAdQc6bKl7bnC/c4W8KwlUiGQSSs9X2yAC6x4KnXq+HfJC9p6kNNpKXoAYl5wAF8wwgYwpwhzNAvXEo23yyjnENhirtwmMBpQqBRjyZW2I8z9a4kKaadhfWA14U7mBoomlAQ3Fa5gazJe8B95efnExo2cIgSuEDeVFC8dXYcP6Lf4jZ7cAIc3HuKJxZHK3FuX2Q1Ov/gZG72z4J79HlAHWOsBlTfIxl+YsuJBJfAbO4RER7O+wI8Cg9z4SOI1DLsgqkG07t+oIk=
   - provider: codedeploy
     access_key_id: AKIAI7EYDS3V62F42DIQ
-    bucket: material-dashboard
+    bucket: "S3  Bucket"
+    revision_type: github
     key: latest.zip
     application: material-dashboard-application
     deployment_group: site-dg
