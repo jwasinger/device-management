@@ -10,7 +10,7 @@ hooks:
     - location: infrastructure/scripts/install_dependencies.sh
       timeout: 300
       runas: root
-    - location: /app/infrastructure/scripts/start_server.sh
+    - location: infrastructure/scripts/start_server.sh
       timeout: 300
       runas: root
   ApplicationStop:
