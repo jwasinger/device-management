@@ -5,15 +5,19 @@ files:
     destination: /app/web_app
   - source: infrastructure
     destination: /app/infrastructure
+permissions:
+  - object:   /app/
+    peattern: "*"
+    owner:    web-app
 hooks:
   AfterInstall:
-    - location: infrastructure/scripts/install_dependencies.sh
+    - location: infrastructure/scripts/install_app.sh
       timeout: 300
-      runas: root
+      runas: web-app
     - location: infrastructure/scripts/start_server.sh
       timeout: 300
-      runas: root
+      runas: web-app
   ApplicationStop:
     - location: infrastructure/scripts/stop_server.sh
       timeout: 300
-      runas: root
+      runas: web-app

@@ -1,4 +1,4 @@
-language: ruby
+language: node_js
 install: echo "party time"
 script: echo "like it's cat meow 99" && true
 before_deploy:
