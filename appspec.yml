@@ -7,7 +7,7 @@ files:
     destination: /app/infrastructure
 permissions:
   - object:   /app/
-    peattern: "*"
+    pattern: "*"
     owner:    web-app
 hooks:
   AfterInstall:
