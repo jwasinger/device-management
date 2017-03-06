@@ -5,3 +5,5 @@ cd /app/web_app
 
 bower install && bower-move
 npm install
+
+chown -R web-app:web-app /app/
