@@ -45,5 +45,8 @@
       "dist/*.js": "public/js/libs",
       "dist/*.css": "public/css/libs"
     }
+  },
+  "resolutions": {
+    "angular": "1.5.8"
   }
 }

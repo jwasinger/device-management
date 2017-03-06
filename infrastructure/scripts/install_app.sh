@@ -3,5 +3,5 @@
 
 cd /app/web_app
 
-bower install
+bower install && bower-move
 npm install

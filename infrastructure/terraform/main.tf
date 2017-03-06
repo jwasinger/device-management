@@ -45,6 +45,16 @@ resource "aws_instance" "instance" {
       timeout = "5m"
     }
   }
+  provisioner "file" {
+    source = "config"
+    destination = "/tmp/config"
+    connection {
+      type = "ssh"
+      user = "centos"
+      private_key = "${file("another-key.pem")}"
+      timeout = "5m"
+    }
+  }
   provisioner "remote-exec" {
     inline = [
       "sudo chmod +x /tmp/provision-centos.sh",
