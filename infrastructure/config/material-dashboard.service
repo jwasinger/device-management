@@ -1,0 +1,11 @@
+[Service]
+ExecStart=/bin/node /app/web_app/main.js
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=material-dashboard
+User=web-app
+Group=web-app
+
+[Install]
+WantedBy=multi-user.target
