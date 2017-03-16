@@ -3,7 +3,7 @@
 
 cd /app/web_app
 
-bower install && bower-move
+bower install --allow-root && bower-move
 npm install
 
 chown -R web-app:web-app /app/
