@@ -55,6 +55,7 @@ resource "aws_instance" "instance" {
       timeout = "5m"
     }
   }
+  /*
   provisioner "remote-exec" {
     inline = [
       "sudo chmod +x /tmp/provision-centos.sh",
@@ -66,6 +67,7 @@ resource "aws_instance" "instance" {
       private_key = "${file("another-key.pem")}"
     }
   }
+  */
 }
 
 # instance role

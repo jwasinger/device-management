@@ -7,3 +7,8 @@ bower install && bower-move
 npm install
 
 chown -R web-app:web-app /app/
+
+#remove the existing service file (if it exists)
+rm -f /usr/lib/systemd/system/material-dashboard.service
+
+cp /infrastructure/config/material-dashboard.service /usr/lib/systemd/system

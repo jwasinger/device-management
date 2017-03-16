@@ -1,1 +1,2 @@
-screen -dmS new_screen -c 'node /app/web_app/main.js'
+systemctl enable material-dashboard.service
+systemctl start material-dashboard.service
