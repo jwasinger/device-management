@@ -3,8 +3,9 @@
 # Material Dashboard
 
   This application is a mockup for a graphical analytics dashboard built with AngularJS and 
-  AngularMaterial.
-
+  AngularMaterial.  This repository includes all necessary configuration to set up a deployment pipeline from Github to AWS which triggers deployments whenever a commit is made to the master branch.
+  
+  Check out the [live example](http://35.165.238.20) running in AWS.
 ## Setting up automatic deployment to AWS
 
 ### Create AWS Infrastructure
