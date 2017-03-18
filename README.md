@@ -18,7 +18,7 @@
   (<https://wiki.centos.org/Cloud/AWS>).  Note that the AMI used here is specific to the 'us-west-2'
   region.
   2.  A security group attached to the instance restricting traffic to ports 80 (HTTP) and 22 (SSH)
-  3.  A public IPv4 (Elastic IP) placed in the default (public) subnet in the default VPC
+  3.  An Elastic IP address attached to the instance and placed in the default (public) subnet in the default VPC
   4.  A CodeDeploy application and deployment group configured with the necessary IAM policies to 
   access the EC2 instance for deployments
 
