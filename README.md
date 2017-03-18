@@ -3,7 +3,7 @@
 # Material Dashboard
 
   This application is a mockup for a graphical analytics dashboard built with AngularJS and 
-  AngularMaterial.  This repository includes all necessary configuration to set up a deployment pipeline from Github to AWS which triggers deployments whenever a commit is made to the master branch.
+  AngularMaterial.
   
   Check out the [live example](http://35.165.238.20) running in AWS.
 ## Setting up automatic deployment to AWS
@@ -14,7 +14,7 @@
   application in AWS.  Assuming that you have Terraform configured with credentials for an existing 
   AWS account, run `terraform apply` under `infrastructure/terraform` to create the following 
   resources:
-  1.  A single EC2 T2 instance running the official CentOS 7 minimal release AMI 
+  1.  A single EC2 T2.micro instance running the official CentOS 7 minimal release AMI 
   (<https://wiki.centos.org/Cloud/AWS>).  Note that the AMI used here is specific to the 'us-west-2'
   region.
   2.  A security group attached to the instance restricting traffic to ports 80 (HTTP) and 22 (SSH)
