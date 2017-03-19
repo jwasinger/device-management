@@ -9,23 +9,6 @@ resource "aws_eip" "lb" {
   vpc      = true
 }
 
-# instance ami
-
-/*
-data "aws_ami" "ubuntu" {
-  most_recent = true
-  filter {
-    name = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-trusty-14.04-amd64-server-*"]
-  }
-  filter {
-    name = "virtualization-type"
-    values = ["hvm"]
-  }
-  owners = ["099720109477"] # Canonical
-}
-*/
-
 resource "aws_instance" "instance" {
   ami = "ami-d2c924b2"
   instance_type = "t2.micro"
@@ -41,7 +24,7 @@ resource "aws_instance" "instance" {
     connection {
       type = "ssh"
       user = "centos"
-      private_key = "${file("another-key.pem")}"
+      private_key = "${file("private.pem")}"
       timeout = "5m"
     }
   }
@@ -51,7 +34,7 @@ resource "aws_instance" "instance" {
     connection {
       type = "ssh"
       user = "centos"
-      private_key = "${file("another-key.pem")}"
+      private_key = "${file("private.pem")}"
       timeout = "5m"
     }
   }
@@ -63,7 +46,7 @@ resource "aws_instance" "instance" {
     connection {
       type = "ssh"
       user = "centos"
-      private_key = "${file("another-key.pem")}"
+      private_key = "${file("private.pem")}"
     }
   }
 }
@@ -232,13 +215,4 @@ resource "aws_codedeploy_deployment_group" "foo" {
         type = "KEY_AND_VALUE"
         value = "HelloWorld"
     }
-
-/*
-    trigger_configuration {
-        trigger_events = ["DeploymentFailure"]
-        trigger_name = "foo-trigger"
-        trigger_target_arn = "foo-topic-arn"
-    }
-*/
-
 }

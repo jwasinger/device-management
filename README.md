@@ -12,11 +12,11 @@
 
   This repository contains all necessary configuration to create the infrastructure to host this 
   application in AWS.  Assuming that you have Terraform configured with credentials for an existing 
-  AWS account, run `terraform apply` under `infrastructure/terraform` to create the following 
+  AWS account, place  private key file `private.pem` in the directory `infrastructure/terraform`.
+  This will be used to log in to the EC2 instance that runs the web application.
+  Then, run `terraform apply` under `infrastructure/terraform` to create the following 
   resources:
-  1.  A single EC2 T2.micro instance running the official CentOS 7 minimal release AMI 
-  (<https://wiki.centos.org/Cloud/AWS>).  Note that the AMI used here is specific to the 'us-west-2'
-  region.
+  1.  A single EC2 T2.micro instance with SSH .
   2.  A security group attached to the instance restricting traffic to ports 80 (HTTP) and 22 (SSH)
   3.  An Elastic IP address attached to the instance and placed in the default (public) subnet in the default VPC
   4.  A CodeDeploy application and deployment group configured with the necessary IAM policies to 
