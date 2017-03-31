@@ -5,7 +5,7 @@
   This application is a mockup for a graphical analytics dashboard built with AngularJS and 
   AngularMaterial.
   
-  Check out the [live example](http://35.163.139.246) running in AWS.
+  Check out the [live example](http://52.41.84.139/) running in AWS.
 ## Setting up automatic deployment to AWS
 
 ### Create AWS Infrastructure
