@@ -2,7 +2,7 @@ angular.module('app.directives.piechart', ['d3'])
 .directive('piechart', ['$q', '$window', 'd3Service', function($q, $window, d3Service) {
 	return {
 		restrict: 'E',
-    templateUrl: "/public/templates/piechart.html",
+    templateUrl: "/templates/piechart.html",
     link: function(scope, element, attrs) {
 			scope.render = function() {
 				scope.element = $(element).find("svg.pie") 

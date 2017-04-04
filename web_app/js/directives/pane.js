@@ -4,7 +4,7 @@ module.directive('pane', [function() {
   return {
     restrict: 'E',
     transclude: true,
-    templateUrl: '/public/templates/pane.html',
+    templateUrl: '/templates/pane.html',
     scope: {
       title: "@"
     },

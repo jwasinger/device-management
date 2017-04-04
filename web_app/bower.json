@@ -26,24 +26,24 @@
   },
   "bowerMove": {
     "angular": {
-      "*.js": "public/js/libs/"
+      "*.js": "js/libs/"
     },
 		"jquery": {
-			"dist/*.js": "public/js/libs"
+			"dist/*.js": "js/libs"
 		},
     "angular-material": {
-      "*.min.js": "public/js/libs/",
-      "*.min.css": "public/css/libs"
+      "*.min.js": "js/libs/",
+      "*.min.css": "css/libs"
     },
     "angular-aria": {
-      "*.min.js": "public/js/libs/"
+      "*.min.js": "js/libs/"
     },
     "angular-animate": {
-      "*.min.js": "public/js/libs/"
+      "*.min.js": "js/libs/"
     },
     "angular-material-data-table": {
-      "dist/*.js": "public/js/libs",
-      "dist/*.css": "public/css/libs"
+      "dist/*.js": "js/libs",
+      "dist/*.css": "css/libs"
     }
   },
   "resolutions": {
