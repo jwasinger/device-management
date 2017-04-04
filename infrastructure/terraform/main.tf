@@ -58,7 +58,6 @@ resource "aws_iam_instance_profile" "instance_profile" {
     roles = ["${aws_iam_role.ec2_trust_role.name}"]
 }
 
-# policy to allow ec2 access to s3
 resource "aws_iam_role" "ec2_trust_role" {
   name = "ec2_trust_role"
   assume_role_policy = <<EOF
@@ -78,6 +77,7 @@ resource "aws_iam_role" "ec2_trust_role" {
 EOF
 }
 
+/*
 resource "aws_iam_role_policy" "s3_policy" {
   name = "s3_policy"
   role = "${aws_iam_role.ec2_trust_role.id}"
@@ -97,6 +97,7 @@ resource "aws_iam_role_policy" "s3_policy" {
 }
 EOF
 }
+*/
 
 # CodeDeploy service role
 
